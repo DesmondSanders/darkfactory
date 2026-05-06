@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello, World!</title>
+    <style>
+      :root {
+        --bg: #f3f6fb;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --ring: #dbe4f0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 55%);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 1.25rem;
+        line-height: 1.5;
+      }
+
+      main {
+        width: min(92vw, 42rem);
+      }
+
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--ring);
+        border-radius: 1rem;
+        padding: clamp(1.5rem, 3vw, 2.5rem);
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 6vw, 3.25rem);
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.2vw, 1.125rem);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="panel" aria-label="Greeting">
+        <h1>Hello, World!</h1>
+        <p>A minimal, modern single-page HTML + CSS app.</p>
+      </section>
+    </main>
+  </body>
+</html>
