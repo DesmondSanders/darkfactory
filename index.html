@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name Display App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card" aria-labelledby="app-title">
+        <h1 id="app-title">Name Display</h1>
+
+        <label for="nameInput" class="label">Enter your name</label>
+        <input
+          id="nameInput"
+          class="input"
+          type="text"
+          placeholder="e.g., Alex"
+          autocomplete="name"
+        />
+
+        <button id="displayBtn" class="button" type="button">Display Name</button>
+
+        <p id="output" class="output" aria-live="polite">Your message will appear here.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
