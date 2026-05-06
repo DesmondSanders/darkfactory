@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello, World!</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --surface: #111827;
+        --text: #f8fafc;
+        --muted: #cbd5e1;
+        --accent: #38bdf8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: radial-gradient(circle at top, #1e293b 0%, var(--bg) 55%);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+      }
+
+      main {
+        width: min(92vw, 720px);
+        background: color-mix(in srgb, var(--surface) 88%, black 12%);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 16px;
+        padding: clamp(1.5rem, 4vw, 3rem);
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 6vw, 4rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .accent {
+        color: var(--accent);
+      }
+
+      p {
+        margin: 0.9rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.2vw, 1.125rem);
+      }
+    </style>
+  </head>
+  <body>
+    <main aria-label="Greeting card">
+      <h1>Hello, <span class="accent">World!</span></h1>
+      <p>A minimal, modern single-page HTML + CSS app.</p>
+    </main>
+  </body>
+</html>
