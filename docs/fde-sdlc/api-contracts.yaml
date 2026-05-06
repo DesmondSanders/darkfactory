@@ -1,0 +1,81 @@
+openapi: 3.0.3
+info:
+  title: FDE SDLC Control Plane API
+  version: 1.0.0
+paths:
+  /initiatives:
+    post:
+      summary: Submit natural-language initiative
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [title, description, projectId]
+              properties:
+                title: { type: string }
+                description: { type: string }
+                projectId: { type: string }
+      responses:
+        '202':
+          description: Accepted for decomposition
+  /initiatives/{id}/decomposition:
+    get:
+      summary: Get generated epics/stories/tasks/acceptance criteria
+      responses:
+        '200':
+          description: Decomposition result
+  /actions:
+    post:
+      summary: Request agent action (e.g., create branch, draft PR)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [type, target, context]
+              properties:
+                type: { type: string }
+                target: { type: object }
+                context: { type: object }
+      responses:
+        '202': { description: Action queued }
+  /actions/{id}:
+    get:
+      summary: Get action status, policy decision, evidence
+      responses:
+        '200': { description: Action details }
+  /approvals/{id}/decision:
+    post:
+      summary: Approve or reject gated action
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [decision]
+              properties:
+                decision:
+                  type: string
+                  enum: [approved, rejected]
+                comment: { type: string }
+      responses:
+        '200': { description: Decision recorded }
+  /release-readiness/evaluate:
+    post:
+      summary: Evaluate release gates
+      responses:
+        '200': { description: Gate report with pass/fail and rationale }
+  /audit/events:
+    get:
+      summary: Query immutable action logs
+      responses:
+        '200': { description: Audit event list }
+  /dashboards/overview:
+    get:
+      summary: Role-based SDLC and autonomy metrics
+      responses:
+        '200': { description: Dashboard payload }
