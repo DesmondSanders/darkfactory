@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello, World!</title>
+    <style>
+      :root {
+        --bg-start: #0f172a;
+        --bg-end: #1e293b;
+        --card-bg: rgba(255, 255, 255, 0.08);
+        --text: #f8fafc;
+        --muted: #cbd5e1;
+        --accent: #38bdf8;
+        --shadow: 0 10px 30px rgba(2, 6, 23, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+      }
+
+      main {
+        width: min(90vw, 680px);
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 1rem;
+        padding: clamp(1.5rem, 4vw, 3rem);
+        text-align: center;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(6px);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        line-height: 1.15;
+        letter-spacing: 0.02em;
+      }
+
+      p {
+        margin: 0.85rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.5vw, 1.125rem);
+      }
+
+      .accent {
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card" aria-label="Greeting">
+        <h1>Hello, <span class="accent">World!</span></h1>
+        <p>A minimal, modern single-page HTML + CSS app.</p>
+      </section>
+    </main>
+  </body>
+</html>
