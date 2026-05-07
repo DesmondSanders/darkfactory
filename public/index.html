@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.IO Room Chat</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="joinView" class="card">
+        <h1>Join a Room</h1>
+        <label for="usernameInput">Username</label>
+        <input id="usernameInput" type="text" maxlength="20" placeholder="e.g. user_1" />
+
+        <label for="roomInput">Room</label>
+        <input id="roomInput" type="text" placeholder="e.g. roomA" />
+
+        <button id="joinBtn">Join</button>
+        <p id="joinError" class="error" aria-live="polite"></p>
+      </section>
+
+      <section id="chatView" class="card hidden">
+        <div class="chat-header">
+          <h2>Room: <span id="roomLabel"></span></h2>
+          <p>You are <strong id="userLabel"></strong></p>
+        </div>
+
+        <ul id="messages" class="messages" aria-live="polite"></ul>
+
+        <div class="composer">
+          <input id="messageInput" type="text" placeholder="Type a message..." />
+          <button id="sendBtn">Send</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>
