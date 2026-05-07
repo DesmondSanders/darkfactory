@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.IO Room Chat</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="join-view" class="card">
+        <h1>Join Chat Room</h1>
+        <form id="join-form" novalidate>
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" maxlength="20" autocomplete="off" required />
+
+          <label for="room">Room</label>
+          <input id="room" name="room" type="text" autocomplete="off" required />
+
+          <button type="submit">Join</button>
+          <p id="join-error" class="error" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="chat-view" class="card hidden">
+        <header class="chat-header">
+          <h2>Room: <span id="current-room"></span></h2>
+        </header>
+
+        <ul id="messages" class="messages" aria-live="polite"></ul>
+
+        <form id="message-form" class="message-form">
+          <input id="message-input" type="text" placeholder="Type a message..." autocomplete="off" required />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
